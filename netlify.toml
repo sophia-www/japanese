@@ -1,11 +1,21 @@
 [build]
   publish = "."
   functions = "functions"
+  # 先檢查題庫；格式錯誤會讓部署失敗，網站維持上一版
+  command = "node scripts/build.mjs"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 [functions]
   node_bundler = "esbuild"
 
 [[headers]]
   for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/data/*"
   [headers.values]
     Cache-Control = "no-cache"
