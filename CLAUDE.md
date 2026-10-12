@@ -92,7 +92,7 @@ https://silly-kashata-9a9256.netlify.app
 1. 讀對應檔案，看既有題目避免重複，找出最大 ID。
 2. 出題 → 加到最後 → `node scripts/validate.mjs`。
 3. commit：`題庫：新增語彙 10 題（v40–v49）`，push。
-4. 回覆：新增了哪些（表格：ID／分類／考點），以及部署確認方式。
+4. 回覆：新增了哪些（表格：ID／分類／考點）＋ commit 前 7 碼。
 
 ### B. 使用者貼上「檢討包」（依檢討包補題）
 
@@ -115,7 +115,11 @@ https://silly-kashata-9a9256.netlify.app
 
 ### C. 部署確認
 
-push 後約 1 分鐘，開 https://silly-kashata-9a9256.netlify.app/data/build.json，`commit` 等於剛推的 commit 前 7 碼就是上線了。App「紀錄」頁的「題庫 → 版本」也會顯示同一個 commit。
+**push 完就結束，不要等待或輪詢部署。** Netlify 會在背景建置（約 1 分鐘），不需要你確認。
+不要 sleep、不要反覆抓網站或 build.json、不要用 Netlify CLI 手動部署。
+
+回覆時附上 commit 前 7 碼即可；使用者會在 App「紀錄 → 題庫 → 版本」自行確認是否一致。
+只有使用者明確說「部署失敗」或「版本沒更新」時才去排查。
 
 ## 題量目標（距考試約 7 週）
 
