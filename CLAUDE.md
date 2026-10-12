@@ -28,6 +28,10 @@ https://silly-kashata-9a9256.netlify.app
 3. **新題加在 `items` 陣列最後。**
 4. **提交前必跑** `node scripts/validate.mjs`，必須顯示 ✓。它也會自動把新 ID 寫進 `data/ids.lock`，一起 commit。
 5. 直接 commit 到 `main` 並 push。Netlify 會再跑一次驗證，失敗就不部署（網站維持舊版）。
+   - **commit 作者必須是** `sophia-www <72118187+sophia-www@users.noreply.github.com>`，且**不要加 `Co-Authored-By` 等共同作者行**。
+     Netlify 免費方案的 private repo 只接受一位已驗證的貢獻者，作者不符就會擋下部署（Build blocked: Unrecognized Git contributor）。
+   - commit 前先跑 `git config user.email`，不是上面的地址就執行：
+     `git config user.name "sophia-www" && git config user.email "72118187+sophia-www@users.noreply.github.com"`
 6. 不要照抄新完全マスター或官方考古題，題目必須原創。
 
 ### 振假名（ふりがな）
